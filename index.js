@@ -28,7 +28,7 @@ async function run() {
 
     // APIs here
     app.get("/apps", async (req, res) => {
-      const limit = parseInt(req.query.limit) || 0; 
+      const limit = parseInt(req.query.limit) || 0;
       const result = await appCollection.find().limit(limit).toArray();
       res.send(result);
     });
@@ -65,3 +65,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
